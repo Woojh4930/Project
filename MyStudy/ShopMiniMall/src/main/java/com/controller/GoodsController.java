@@ -7,25 +7,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.goods.GoodsDTO;
 import com.service.goods.GoodsService;
 
 @Controller
-public class MainController {
+public class GoodsController {
 
 	@Autowired
 	GoodsService goodsService;
 	
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	@ModelAttribute("goodsList")
-	public List<GoodsDTO> main() throws Exception {
-		String gCategory = "top";
-		List<GoodsDTO> list = null;
+	@RequestMapping(value = "/goodsRetrieve", method = RequestMethod.GET)
+	public ModelAndView goodsRetrieve(@RequestParam String gCode) throws Exception {
 		
-		list = goodsService.goodsList(gCategory);
+		GoodsDTO dto = goodsService.goodsRetrieve(gCode);
 		
-		return list;
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("goodsRetrieve", dto);
+		mav.setViewName("goodsRetrieve");
+		
+		return mav;
 	}
 	
 }
