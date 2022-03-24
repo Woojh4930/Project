@@ -40,7 +40,7 @@
 								</tr>
 								<tr>
 									<td class= "td_default" align ="center">
-										<a class= "a_black" href="GoodsRetrieveServlet?gCode=${list.gCode}"> 
+										<a class= "a_black" href="goodsRetrieve?gCode=${list.gCode}"> 
 										${list.gName}<br>
 										</a>
 										<font color="gray">
