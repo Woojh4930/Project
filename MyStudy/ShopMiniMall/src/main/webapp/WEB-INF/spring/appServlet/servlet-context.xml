@@ -25,8 +25,9 @@
 
 	<!-- 3. 자원(js,css,image) 설정 -->
 	<!-- https://docs.spring.io/spring-framework/docs/4.3.0.RELEASE/spring-framework-reference/html/mvc.html#mvc-flash-attributes -->
-	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
-	<mvc:resources location="/WEB-INF/images/"
+	<mvc:resources location="/WEB-INF/views/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/views/js/" mapping="/js/**" />
+	<mvc:resources location="/WEB-INF/views/images/"
 		mapping="/images/**" />
 
 	<context:component-scan base-package="com.*" />
