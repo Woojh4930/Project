@@ -12,6 +12,6 @@
 	<a href="GoodsCartListServlet">장바구니 목록</a>
   </c:if>
   <c:if test="${sessionScope.login==null}">
-	<a href="LoginUIServlet">로그인</a>
+	<a href="loginUI">로그인</a>
 	<a href="memberUI">회원가입</a>
   </c:if>

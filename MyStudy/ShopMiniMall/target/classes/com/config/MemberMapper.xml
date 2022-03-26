@@ -29,8 +29,8 @@
 			   email1,
 			   email2
 		from member
-		where userid = #{id} and
-			  passwd = #{pw}
+		where userid = #{userid} and
+			  passwd = #{passwd}
 	</select>
 	<select id="mypage" parameterType="string" resultType="MemberDTO">
 		select userid,
@@ -45,7 +45,7 @@
 			   email1,
 			   email2
 		from member
-		where userid = #{id}
+		where userid = #{userid}
 	</select>
 	
 	<update id="memberUpdate" parameterType="MemberDTO">
