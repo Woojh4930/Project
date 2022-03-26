@@ -1,10 +1,14 @@
 package com.controller;
 
+import java.util.HashMap;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +52,25 @@ public class MemberController {
 		}
 		
 		return mesg;
+	}
+	
+	@GetMapping(path = "/loginUI")
+	public String loginUI() throws Exception {
+		
+			return "loginForm";
+	}
+	
+	@PostMapping(path = "/login")
+	public String login(@RequestParam HashMap<String, String> map, HttpSession session) throws Exception {
+		MemberDTO dto = memberService.login(map);
+		
+		if(dto==null) {
+			return "member/loginFail";
+		}else {
+			
+		session.setAttribute("login", dto);
+		return "redirect:main";
+		}
 	}
 	
 	@ExceptionHandler({Exception.class})
