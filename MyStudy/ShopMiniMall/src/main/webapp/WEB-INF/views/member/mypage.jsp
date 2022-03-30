@@ -8,8 +8,9 @@
 	${key} ==> 기본적으로 requestScope에서 찾는다.
 			    없으면 sessionScope로 넘어가서 찾는다.
  -->
-<form action="MemberUpdateServlet" method="get">
+<form action="memberUpdate" method="post">
 <input type="hidden" name="userid" value="${login.userid}">
+<input type="hidden" name="username" value="${login.username}">
 아이디:${sessionScope.login.userid}<br>
 
 이름:${login.username}<br>
