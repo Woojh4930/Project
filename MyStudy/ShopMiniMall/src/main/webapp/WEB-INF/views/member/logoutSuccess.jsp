@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
     <script>
     	alert("로그아웃되었습니다.");
-    	location.href="../main";
+    	location.href="/app/main";
     </script>
