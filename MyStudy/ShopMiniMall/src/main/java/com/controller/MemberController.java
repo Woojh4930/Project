@@ -73,6 +73,14 @@ public class MemberController {
 		}
 	}
 	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "member/logoutSuccess";
+	}
+	
+	
+	
 	@ExceptionHandler({Exception.class})
 	public String errorPage() {
 		return "error/error";
