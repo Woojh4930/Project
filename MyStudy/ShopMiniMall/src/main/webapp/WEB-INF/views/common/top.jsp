@@ -9,7 +9,7 @@
   <c:if test="${sessionScope.login!=null}">
 	<a href="logout">로그아웃</a>
 	<a href="mypage">mypage</a>
-	<a href="GoodsCartListServlet">장바구니 목록</a>
+	<a href="goodsCartList">장바구니 목록</a>
   </c:if>
   <c:if test="${sessionScope.login==null}">
 	<a href="loginUI">로그인</a>
