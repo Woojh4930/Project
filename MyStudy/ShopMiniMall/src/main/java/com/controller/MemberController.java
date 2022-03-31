@@ -79,7 +79,7 @@ public class MemberController {
 		session.invalidate();
 		return "member/logoutSuccess";
 	}
-	
+	//////////////////////
 	@GetMapping("/mypage")
 	public String mypage() throws Exception {
 		
@@ -93,7 +93,7 @@ public class MemberController {
 		session.setAttribute("login", dto);
 		return "redirect:mypage";
 	}
-	
+	//////////////////////
 	
 	
 	@ExceptionHandler({Exception.class})
