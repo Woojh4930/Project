@@ -72,6 +72,13 @@ public class GoodsController {
 		return "/goods/cartAddSuccess";
 	}
 	
+	@GetMapping("/goodsCartDel")
+	public String goodsCartDel(@RequestParam int num) throws Exception {
+		
+		cartService.cartDelete(num);
+		return "redirect:goodsCartList";
+	}
+	
 	
 	
 	
