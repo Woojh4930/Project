@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <script>
    alert("장바구니 저장 성공");
-  location.href="/app/goodsList";
+  location.href="/app/main";
 </script>

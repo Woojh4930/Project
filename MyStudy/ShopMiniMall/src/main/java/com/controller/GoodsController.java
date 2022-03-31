@@ -63,6 +63,15 @@ public class GoodsController {
 		
 	}
 	
+	@GetMapping("/goodsCartAdd")
+	public String goodsCartAdd(HttpSession session, CartDTO cDTO, Model m) throws Exception {
+		MemberDTO dto = (MemberDTO) session.getAttribute("login");
+		String userid = dto.getUserid();
+		cDTO.setUserid(userid);
+		cartService.cartAdd(cDTO);
+		return "/goods/cartAddSuccess";
+	}
+	
 	
 	
 	
